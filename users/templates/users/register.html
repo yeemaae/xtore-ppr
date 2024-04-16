@@ -16,50 +16,43 @@
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">Create an Account</h3>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="{% url 'users:register' %}" method="post">
+                                    {% csrf_token %}
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputFirstName">First Name</label>
-                                                <input class="form-control py-4" id="inputFirstName" type="text"
-                                                       placeholder="Enter first name"/>
+                                                <label class="small mb-1" for="{{ form.first_name.id_for_lable }}">First Name</label>
+                                                {{ form.first_name }}
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputLastName">Last Name</label>
-                                                <input class="form-control py-4" id="inputLastName" type="text"
-                                                       placeholder="Enter last name"/>
+                                                <label class="small mb-1" for="{{ form.last_name.id_for_lable }}">Last Name</label>
+                                                {{ form.last_name }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputUsername">Username</label>
-                                            <input class="form-control py-4" id="inputUsername" type="text"
-                                                   aria-describedby="usernameHelp"
-                                                   placeholder="Enter username"/>
+                                            <label class="small mb-1" for="{{ form.username.id_for_lable }}">Username</label>
+                                            {{ form.username }}
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputEmailAddress">Email Address</label>
-                                            <input class="form-control py-4" id="inputEmailAddress" type="email"
-                                                   aria-describedby="emailHelp"
-                                                   placeholder="Enter email address"/>
+                                            <label class="small mb-1" for="{{ form.email.id_for_lable }}">Email Address</label>
+                                            {{ form.email }}
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
-                                                <input class="form-control py-4" id="inputPassword" type="password"
-                                                       placeholder="Enter password"/>
+                                                <label class="small mb-1" for="{{ form.password1.id_for_lable }}">Password</label>
+                                                {{ form.password1 }}
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-                                                <input class="form-control py-4" id="inputConfirmPassword"
-                                                       type="password" placeholder="Confirm password"/>
+                                                <label class="small mb-1" for="{{ form.password2.id_for_lable }}">Confirm Password</label>
+                                                {{ form.password2 }}
                                             </div>
                                         </div>
                                     </div>
